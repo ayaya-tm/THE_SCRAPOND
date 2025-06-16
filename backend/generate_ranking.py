@@ -3,7 +3,7 @@ from janome.tokenizer import Tokenizer
 from collections import Counter
 
 # ツイートの読み込み
-with open("tweets.json", "r", encoding="utf-8") as f:
+with open("../tweets.json", "r", encoding="utf-8") as f:
     tweets = json.load(f)
 
 # 形態素解析器の準備
@@ -39,7 +39,7 @@ counter = Counter(words)
 ranking = counter.most_common(50)  # 上位50単語を取得
 
 # 結果を保存
-with open("frontend/public/word_ranking.json", "w", encoding="utf-8") as f:
+with open("../frontend/public/word_ranking.json", "w", encoding="utf-8") as f:
     json.dump(ranking, f, ensure_ascii=False, indent=2)
 
 print("📊 ランキングを word_ranking.json に保存しました！")

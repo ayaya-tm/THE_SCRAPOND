@@ -30,7 +30,7 @@ if response.status_code == 200:
     tweets = response.json().get("data", [])
     contents = [tweet["text"] for tweet in tweets]
 
-    with open("tweets.json", "w", encoding="utf-8") as f:
+    with open("./../tweets.json", "w", encoding="utf-8") as f:
         json.dump(contents, f, ensure_ascii=False, indent=2)
 
     print(f"{len(contents)} 件のツイートを保存しました。")
