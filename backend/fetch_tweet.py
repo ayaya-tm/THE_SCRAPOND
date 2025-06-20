@@ -25,15 +25,28 @@ params = {
 # リクエスト送信
 response = requests.get(url, headers=headers, params=params)
 
-# 結果保存
 if response.status_code == 200:
     tweets = response.json().get("data", [])
-    contents = [tweet["text"] for tweet in tweets]
+    new_contents = [tweet["text"] for tweet in tweets]
 
+    # 既存のtweets.jsonを読み込み（なければ空リスト）
+    try:
+        with open("./../tweets.json", "r", encoding="utf-8") as f:
+            old_contents = json.load(f)
+    except FileNotFoundError:
+        old_contents = []
+
+    # 新旧ツイートを合体
+    combined = old_contents + new_contents
+
+    # 重複削除（順序は保証されないがシンプルな方法）
+    combined = list(set(combined))
+
+    # ファイルに書き込み（上書き保存）
     with open("./../tweets.json", "w", encoding="utf-8") as f:
-        json.dump(contents, f, ensure_ascii=False, indent=2)
+        json.dump(combined, f, ensure_ascii=False, indent=2)
 
-    print(f"{len(contents)} 件のツイートを保存しました。")
+    print(f"{len(new_contents)} 件の新規ツイートを追記しました。合計 {len(combined)} 件です。")
 else:
     print("エラー:", response.status_code)
     print(response.text)

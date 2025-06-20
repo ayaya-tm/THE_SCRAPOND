@@ -1,8 +1,28 @@
+import React, { useState } from "react";
+import HollywoodIntro from "../components/HollywoodIntro";
+import FireworksCanvas from "../components/FireworksCanvas";
+
 const Home = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  const handleIntroFinish = () => {
+    setShowIntro(false);
+  };
+
+  if (showIntro) {
+    return (
+      <div className="relative w-full h-screen bg-black overflow-hidden">
+        <FireworksCanvas />
+        <HollywoodIntro onFinish={handleIntroFinish} />
+      </div>
+    );
+  }
+
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-red-900 via-red-700 to-red-800 flex items-center justify-center p-6 overflow-hidden">
 
       {/* 🎆 背景アニメーション */}
+      <div className="absolute w-[700px] h-[700px] bg-yellow-400 blur-2xl rounded-full animate-pulse-slower left-[-150px] top-[-100px]"></div>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-[800px] h-[800px] bg-yellow-500 opacity-10 blur-3xl rounded-full animate-pulse-slow left-[-200px] top-[-200px]"></div>
         <div className="absolute w-[600px] h-[600px] bg-red-400 opacity-10 blur-2xl rounded-full animate-pulse-slow right-[-150px] bottom-[-150px]"></div>
