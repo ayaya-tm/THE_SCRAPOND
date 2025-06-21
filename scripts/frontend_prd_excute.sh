@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 deleteid=$(docker ps |grep the_scrapond-front-prd |awk '{print $1}')
 if [ $deleteid != "" ]; then
     docker stop $deleteid
