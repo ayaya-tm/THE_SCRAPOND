@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HollywoodIntro from "../components/HollywoodIntro";
 import FireworksCanvas from "../components/FireworksCanvas";
 
+
 const Home = () => {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -12,8 +13,8 @@ const Home = () => {
   if (showIntro) {
     return (
       <div className="relative w-full h-screen bg-black overflow-hidden">
-        <FireworksCanvas />
-        <HollywoodIntro onFinish={handleIntroFinish} />
+        {/* 🌟 ハリウッド風イントロ */}
+        <HollywoodIntro onFinish={handleIntroFinish} /> 
       </div>
     );
   }
@@ -55,6 +56,12 @@ const Home = () => {
             className="inline-block bg-yellow-400 text-red-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-300 transition-transform duration-200"
           >
             Show the Ranking →
+          </a>
+          <a
+            href="/orverview"
+            className="inline-block bg-yellow-400 text-red-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-300 transition-transform duration-200"
+          >
+            what is THE SECOND →
           </a>
         </div>
       </div>
