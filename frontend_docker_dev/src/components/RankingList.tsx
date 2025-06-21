@@ -1,3 +1,4 @@
+
 type WordEntry = [string, number];
 
 export const RankingList = ({ ranking }: { ranking: WordEntry[] }) => (
