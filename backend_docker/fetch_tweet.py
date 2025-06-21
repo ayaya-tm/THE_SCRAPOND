@@ -31,7 +31,7 @@ if response.status_code == 200:
 
     # 既存のtweets.jsonを読み込み（なければ空リスト）
     try:
-        with open("./tweets.json", "r", encoding="utf-8") as f:
+        with open("./lib/tweets.json", "r", encoding="utf-8") as f:
             old_contents = json.load(f)
     except FileNotFoundError:
         old_contents = []
@@ -43,7 +43,7 @@ if response.status_code == 200:
     combined = list(set(combined))
 
     # ファイルに書き込み（上書き保存）
-    with open("./../tweets.json", "w", encoding="utf-8") as f:
+    with open("./lib/tweets.json", "w", encoding="utf-8") as f:
         json.dump(combined, f, ensure_ascii=False, indent=2)
 
     print(f"{len(new_contents)} 件の新規ツイートを追記しました。合計 {len(combined)} 件です。")

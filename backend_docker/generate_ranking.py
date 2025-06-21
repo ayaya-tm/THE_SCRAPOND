@@ -3,7 +3,7 @@ from janome.tokenizer import Tokenizer
 from collections import Counter
 
 # ツイートの読み込み
-with open("./tweets.json", "r", encoding="utf-8") as f:
+with open("./lib/tweets.json", "r", encoding="utf-8") as f:
     tweets = json.load(f)
 
 # 形態素解析器の準備

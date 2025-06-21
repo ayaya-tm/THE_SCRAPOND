@@ -3,7 +3,7 @@ import re
 from collections import Counter
 
 # ツイートの読み込み
-with open("../tweets.json", "r", encoding="utf-8") as f:
+with open("./lib/tweets.json", "r", encoding="utf-8") as f:
     tweets = json.load(f)
 
 all_hashtags = []
@@ -22,7 +22,7 @@ counter = Counter(all_hashtags)
 ranking = counter.most_common(50)  # 上位50件を取得
 
 # 結果を保存（リストのタプル形式で保持）
-with open("../frontend/public/hashtag_ranking.json", "w", encoding="utf-8") as f:
+with open("./lib/hashtag_ranking.json", "w", encoding="utf-8") as f:
     json.dump(ranking, f, ensure_ascii=False, indent=2)
 
 print("📊 ハッシュタグランキングを hashtag_ranking.json に保存しました！")
