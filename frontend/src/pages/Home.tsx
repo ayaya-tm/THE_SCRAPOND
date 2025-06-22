@@ -1,7 +1,6 @@
 import { useState } from "react";
 import HollywoodIntro from "../components/HollywoodIntro";
 
-
 const Home = () => {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -51,13 +50,13 @@ const Home = () => {
 
         <div className="pt-4">
           <a
-            href="/ranking"
+            href="#/ranking"
             className="inline-block bg-yellow-400 text-red-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-300 transition-transform duration-200"
           >
             Show the Ranking →
           </a>
           <a
-            href="/orverview"
+            href="#/orverview"
             className="inline-block bg-yellow-400 text-red-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-300 transition-transform duration-200"
           >
             what is THE SECOND →

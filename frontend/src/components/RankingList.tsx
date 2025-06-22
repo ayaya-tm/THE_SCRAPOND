@@ -1,4 +1,4 @@
-// src/components/RankingList.tsx
+
 
 type WordEntry = [string, number];
 

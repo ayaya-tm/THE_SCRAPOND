@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Ranking from "./pages/Ranking";
 import Orverview from "./pages/Orverview";
@@ -9,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ranking" element={<Ranking />} />
-        <Route path="/orverview" element={<Orverview  />} />
+        <Route path="/orverview" element={<Orverview />} />
       </Routes>
     </Router>
   );

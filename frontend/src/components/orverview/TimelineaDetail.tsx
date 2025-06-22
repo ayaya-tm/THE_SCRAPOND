@@ -13,7 +13,7 @@ const TimelineDetail: React.FC<Props> = ({ year }) => {
           2023
         </h1>
         <div>
-        <img src="../../../../public/images/2023.png" alt="" width="100%" />
+        <img src="./images/2023.png" alt="" width="100%" />
         </div>
         <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wider uppercase text-yellow-300 py-4">
           － 燃え尽きるまで、笑いに命を賭けた者たちの記録 －
@@ -55,7 +55,7 @@ const TimelineDetail: React.FC<Props> = ({ year }) => {
           2024
         </h1>
         <div>
-        <img src="../../../../public/images/2024.png" alt="" width="100%" />
+        <img src="./images/2024.png" alt="" width="100%" />
         </div>
         <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wider uppercase text-yellow-300 py-4">
           ― 熟練の技と魂が交差した、笑いの頂上決戦 ―
@@ -103,7 +103,7 @@ const TimelineDetail: React.FC<Props> = ({ year }) => {
           2025
         </h1>
         <div>
-        <img src="../../../../public/images/2025.png" alt="" width="100%" />
+        <img src="./images/2025.png" alt="" width="100%" />
         </div>
         <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wider uppercase text-yellow-300 py-4">
           ー「魂の笑い」が鳴り響いた春 ー

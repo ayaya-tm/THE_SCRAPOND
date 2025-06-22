@@ -6,7 +6,7 @@ const Ranking = () => {
   const [ranking, setRanking] = useState<WordEntry[]>([]);
 
   useEffect(() => {
-    fetch("/word_ranking.json")
+    fetch("./word_ranking.json")
       .then((res) => res.json())
       .then((data: WordEntry[]) => setRanking(data))
       .catch((err) => console.error("ランキングの読み込み失敗:", err));
