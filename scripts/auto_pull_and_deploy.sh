@@ -1,6 +1,7 @@
 #!/bin/bash
 gitstatus=$(git pull)
-if echo "$gitstatus" | grep -q "frontend_docker_prd"; then    
+if echo "$gitstatus" | grep -q "frontend_docker_prd"; then
+    echo "prd frontendの変更を検出: $(date)" >> /home/neko/autodeploy.log
     deleteid=$(docker ps |grep the_scrapond-front-prd |awk '{print $1}')
     if [ $deleteid != "" ]; then
         docker stop $deleteid
