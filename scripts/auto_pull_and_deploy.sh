@@ -13,4 +13,6 @@ if echo "$gitstatus" | grep -q "frontend_docker_prd"; then
 
     docker build -t the_scrapond-front-prd -f ./dockerfiles/frontend/Dockerfile.prd .
     docker run -d -p 8080:80 -v $(pwd)/lib:/usr/share/nginx/html/rankings --name scrapond-prd the_scrapond-front-prd
+else
+    echo "prd frontendに変更なし: $(date)" >> /home/neko/autodeploy.log
 fi
